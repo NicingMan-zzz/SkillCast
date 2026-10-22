@@ -210,9 +210,9 @@ curl -X POST https://api.runpod.ai/v2/$RUNPOD_ENDPOINT_ID/runsync \
  
 | Name        | Role                | GitHub                                   |
 | ----------- | ------------------- | ---------------------------------------- |
-| [Name]      | Team Lead / Backend | [@username](https://github.com/username) |
-| [Name]      | Frontend            | [@username](https://github.com/username) |
-| [Name]      | AI / RunPod         | [@username](https://github.com/username) |
+| Qis         | Team Lead / Backend | [@username](https://github.com/username) |
+| Josh        | Frontend            | [@Joshify](https://github.com/Joshify79) |
+| Al          | AI / RunPod         | [@NicingMan-zzz](https://github.com/nicingman-zzz) |
  
 ---
  
