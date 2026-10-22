@@ -10,20 +10,20 @@
  
 | Field                  | Details                                                    |
 | ---------------------- | ---------------------------------------------------------- |
-| **Team Name**          | [YOUR TEAM NAME]                                           |
+| **Team Name**          | Ctrl+Alt+Three                                             |
 | **Team Domain**        | Domain 1 — The Aiversecity Future-Ready Workforce Domain   |
 | **SDG Track (1–17)**   | SDG 4 — Quality Education (also SDG 5, 8, 9, 10)           |
-| **Team Leader**        | [LEADER NAME]                                              |
-| **University**         | [UNIVERSITY NAME(S)]                                       |
-| **Number of Members**  | [NUMBER]                                                   |
+| **Team Leader**        | QIS                                                        |
+| **University**         | UNIVERSITI PERTAHANAN NASIONAL MALAYSIA                    |
+| **Number of Members**  | 3                                                          |
  
 ## Links
  
 | Resource          | Link                                                 |
 | ----------------- | ---------------------------------------------------- |
-| GitHub Repository | https://github.com/[your-username]/skillcast         |
-| Replit Project    | https://replit.com/@[your-username]/skillcast        |
-| Live Demo         | https://[your-project].replit.app                    |
+| GitHub Repository | https://github.com/NicingMan-zzz/skillcast           |
+| Replit Project    | https://replit.com/NicingMan-zzz/skillcast           |
+| Live Demo         | https://Skillcast.replit.app                         |
 | RunPod Endpoint   | https://api.runpod.ai/v2/[your-endpoint-id]          |
 | Slide Deck        | [ADD LINK]                                           |
 | Demo Video        | [ADD LINK]                                           |
