@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillCast — Future-Ready Workforce Navigator</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Phosphor Icons CDN -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="min-h-screen flex flex-col bg-slate-100 text-slate-900">
+
+  <!-- TOP APP BAR -->
+  <header class="bg-white border-b border-slate-200 px-6 py-3 sticky top-0 z-50 flex flex-wrap items-center justify-between gap-4">
+    <div class="flex items-center space-x-3">
+      <div class="h-9 w-9 rounded-xl bg-indigo-600 flex items-center justify-center font-bold text-white shadow-sm">
+        <i class="ph-bold ph-compass text-xl"></i>
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <h1 class="text-base font-extrabold text-slate-900">SkillCast</h1>
+          <span class="text-[10px] bg-indigo-50 text-indigo-700 border border-indigo-200 px-2 py-0.5 rounded-full font-bold">SDC 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Signals Pill -->
+    <div class="flex items-center bg-slate-100 border border-slate-200 rounded-full px-3.5 py-1 text-xs text-slate-600 gap-2">
+      <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+      <span class="font-semibold text-slate-800">Signals:</span>
+      <span>arXiv AI Tracker & Open Job Index</span>
+      <span class="text-slate-300">|</span>
+      <span class="text-indigo-600 font-semibold">Oct 2026</span>
+    </div>
+
+    <!-- Future Disruption Scenario Toggle -->
+    <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200">
+      <span class="text-[11px] font-bold px-2 text-slate-500">Scenario:</span>
+      <button id="scenarioModBtn" onclick="setScenario('moderate')" class="px-3 py-1 text-xs rounded-md font-bold bg-indigo-600 text-white shadow-xs">
+        Moderate
+      </button>
+      <button id="scenarioAccBtn" onclick="setScenario('accelerated')" class="px-3 py-1 text-xs rounded-md font-semibold text-slate-600 hover:text-slate-900">
+        Accelerated
+      </button>
+    </div>
+  </header>
+
+  <!-- SPLIT SCREEN COCKPIT -->
+  <div class="max-w-7xl mx-auto px-6 py-6 w-full flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+    <!-- LEFT SIDEBAR: CastBot + Intake Controls (col-span-4) -->
+    <aside class="lg:col-span-4 space-y-5">
+      
+      <!-- CastBot Compact Persona Card -->
+      <div class="workspace-card p-5 border-indigo-100 bg-gradient-to-br from-indigo-50/50 to-white">
+        <div class="flex items-center gap-4 mb-3">
+          <div class="mascot-container relative shrink-0">
+            <div class="h-14 w-14 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-600 p-2 shadow-sm flex items-center justify-center">
+              <svg viewBox="0 0 120 120" class="w-full h-full text-white" fill="none">
+                <rect x="57" y="10" width="6" height="14" rx="3" fill="#ffffff"/>
+                <circle cx="60" cy="8" r="6" fill="#38bdf8"/>
+                <rect x="25" y="24" width="70" height="42" rx="16" fill="#0f172a"/>
+                <ellipse class="mascot-eye" cx="48" cy="45" rx="5.5" ry="7" fill="#38bdf8"/>
+                <ellipse class="mascot-eye" cx="72" cy="45" rx="5.5" ry="7" fill="#38bdf8"/>
+                <rect x="36" y="70" width="48" height="36" rx="12" fill="#f8fafc"/>
+                <g class="mascot-arm-wave">
+                  <path d="M 34 76 Q 16 65 20 48" stroke="#f8fafc" stroke-width="7" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </div>
+            <span class="absolute -bottom-1 -right-1 flex h-3 w-3">
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border border-white"></span>
+            </span>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-1.5">
+              <h2 class="text-sm font-bold text-slate-900">CastBot Navigator</h2>
+              <span class="text-[9px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.2 rounded">ACTIVE</span>
+            </div>
+            <span class="text-[11px] text-slate-500" id="botMood">Ready for analysis</span>
+          </div>
+        </div>
+
+        <p id="botSpeechText" class="text-xs text-slate-700 bg-white p-3 rounded-xl border border-indigo-100 leading-relaxed font-medium transition-opacity">
+          "Welcome! Pick a demo profile below or add your skills to compute your transition viability."
+        </p>
+      </div>
+
+      <!-- Intake & Skill Profile Box -->
+      <div class="workspace-card p-5 space-y-4">
+        <div>
+          <h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-1">Your Skills Inventory</h3>
+          <p class="text-xs text-slate-500">Type a skill and hit Enter</p>
+        </div>
+
+        <div id="skillsInputContainer" class="flex flex-wrap gap-1.5 p-3 bg-slate-50 border border-slate-200 rounded-xl min-h-[60px] items-center">
+          <input id="skillInput" type="text" placeholder="+ Add skill" class="bg-transparent text-xs text-slate-800 placeholder-slate-400 focus:outline-none flex-1 min-w-[90px] px-1" onkeydown="handleSkillAdd(event)" />
+        </div>
+
+        <!-- Simulated CV Upload -->
+        <div onclick="simulateResumeUpload()" class="border border-dashed border-slate-300 hover:border-indigo-500 bg-slate-50/50 hover:bg-indigo-50/20 p-3 rounded-xl flex items-center justify-center gap-2 cursor-pointer transition-all">
+          <i class="ph-bold ph-upload-simple text-indigo-600"></i>
+          <span class="text-xs font-bold text-slate-700">Simulate Resume Parse</span>
+        </div>
+        <div id="uploadStatus" class="hidden text-xs text-center"></div>
+
+        <!-- Quick Personas -->
+        <div class="pt-2 border-t border-slate-100">
+          <span class="text-[11px] font-bold text-slate-500 block mb-2">Preset Demo Personas:</span>
+          <div class="grid grid-cols-1 gap-1.5">
+            <button onclick="loadPersona('csStudent')" class="text-left text-xs font-semibold px-3 py-2 rounded-lg bg-slate-50 hover:bg-indigo-50 text-slate-700 border border-slate-200 transition-all flex justify-between items-center">
+              <span>CS Undergraduate</span>
+              <i class="ph ph-arrow-right text-slate-400"></i>
+            </button>
+            <button onclick="loadPersona('businessAnalyst')" class="text-left text-xs font-semibold px-3 py-2 rounded-lg bg-slate-50 hover:bg-indigo-50 text-slate-700 border border-slate-200 transition-all flex justify-between items-center">
+              <span>Business Analyst</span>
+              <i class="ph ph-arrow-right text-slate-400"></i>
+            </button>
+            <button onclick="loadPersona('uiDesigner')" class="text-left text-xs font-semibold px-3 py-2 rounded-lg bg-slate-50 hover:bg-indigo-50 text-slate-700 border border-slate-200 transition-all flex justify-between items-center">
+              <span>UI/UX Designer</span>
+              <i class="ph ph-arrow-right text-slate-400"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- RIGHT WORKSPACE: Tabbed Interactive Views (col-span-8) -->
+    <main class="lg:col-span-8 space-y-4">
+      
+      <!-- TAB NAVIGATION BAR -->
+      <div class="bg-white p-1.5 rounded-xl border border-slate-200 flex flex-wrap gap-1 shadow-xs">
+        <button id="tab-btn-roles" onclick="switchTab('roles')" class="px-4 py-2 text-xs font-bold rounded-lg bg-indigo-600 text-white shadow-xs transition-all">
+          🎯 Matched Future Roles
+        </button>
+        <button id="tab-btn-radar" onclick="switchTab('radar')" class="px-4 py-2 text-xs font-semibold rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all">
+          📊 Competency Radar
+        </button>
+        <button id="tab-btn-roadmap" onclick="switchTab('roadmap')" class="px-4 py-2 text-xs font-semibold rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all">
+          🗺️ Learning Roadmap
+        </button>
+        <button id="tab-btn-audit" onclick="switchTab('audit')" class="px-4 py-2 text-xs font-semibold rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-all">
+          🛡️ AI Decision Audit
+        </button>
+      </div>
+
+      <!-- PANE 1: Matched Future Roles -->
+      <section id="pane-roles" class="workspace-card p-6 space-y-4">
+        <div>
+          <h2 class="text-base font-bold text-slate-900">Recommended Future Roles</h2>
+          <p class="text-xs text-slate-500">Ranked by skill proximity, disruption probability, and SDG alignment.</p>
+        </div>
+        <div id="rolesGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Populated by js/components.js -->
+        </div>
+      </section>
+
+      <!-- PANE 2: Competency Radar -->
+      <section id="pane-radar" class="workspace-card p-6 hidden space-y-4">
+        <div>
+          <h2 class="text-base font-bold text-slate-900">Future Skills Competency Radar</h2>
+          <p class="text-xs text-slate-500">Comparing your profile against emerging market requirements.</p>
+        </div>
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 h-80 relative">
+          <canvas id="skillsRadarChart"></canvas>
+        </div>
+      </section>
+
+      <!-- PANE 3: Learning Roadmap -->
+      <section id="pane-roadmap" class="workspace-card p-6 hidden space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-100">
+          <div>
+            <span class="text-xs font-bold text-indigo-600 uppercase">Selected Pathway</span>
+            <h2 id="pathwayTitle" class="text-lg font-bold text-slate-900 mt-0.5">--</h2>
+          </div>
+          <div class="flex items-center gap-4 text-xs">
+            <div>
+              <span class="text-slate-400 block">Est. Duration</span>
+              <span id="pathwayDuration" class="font-bold text-slate-900">--</span>
+            </div>
+            <span class="bg-emerald-50 text-emerald-800 border border-emerald-200 px-2.5 py-1 rounded font-bold">HRD Corp Claimable</span>
+          </div>
+        </div>
+
+        <div id="pathwaySteps" class="space-y-3">
+          <!-- Populated by js/components.js -->
+        </div>
+      </section>
+
+      <!-- PANE 4: AI Decision Audit -->
+      <section id="pane-audit" class="workspace-card p-6 hidden space-y-4">
+        <div>
+          <h2 class="text-base font-bold text-slate-900 flex items-center gap-2">
+            <i class="ph-bold ph-shield-check text-indigo-600"></i> Explainable AI Decision Trace
+          </h2>
+          <p class="text-xs text-slate-500">Auditable score breakdown ensuring zero demographic bias and compliance.</p>
+        </div>
+
+        <div id="auditDetailsContainer">
+          <!-- Populated by js/app.js -->
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- SCRIPTS IN ORDER -->
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
