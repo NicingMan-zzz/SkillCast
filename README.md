@@ -208,10 +208,10 @@ curl -X POST https://api.runpod.ai/v2/$RUNPOD_ENDPOINT_ID/runsync \
 - [ ] SDG contribution view aggregated for a person, company or region
 ## Team
  
-| Name        | Role                | GitHub                                   |
-| ----------- | ------------------- | ---------------------------------------- |
-| Qis         | Team Lead / Backend | [@username](https://github.com/username) |
-| Josh        | Frontend            | [@Joshify](https://github.com/Joshify79) |
+| Name        | Role                | GitHub                                             |
+| ----------- | ------------------- | ---------------------------------------------------|
+| Qis         | Team Lead / Frontend| [@syxe7](https://github.com/syxe7)                 |
+| Josh        | Backend             | [@Joshify](https://github.com/Joshify79)           |
 | Al          | AI / RunPod         | [@NicingMan-zzz](https://github.com/nicingman-zzz) |
  
 ---
