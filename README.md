@@ -13,8 +13,8 @@
 | **Team Name**          | Ctrl+Alt+Three                                             |
 | **Team Domain**        | Domain 1 — The Aiversecity Future-Ready Workforce Domain   |
 | **SDG Track (1–17)**   | SDG 4 — Quality Education (also SDG 5, 8, 9, 10)           |
-| **Team Leader**        | QIS                                                        |
-| **University**         | UNIVERSITI PERTAHANAN NASIONAL MALAYSIA                    |
+| **Team Leader**        | QISTINA                                                    |
+| **University**         | NATIONAL DEFENCE UNIVERSITY OF MALAYSIA                    |
 | **Number of Members**  | 3                                                          |
  
 ## Links
