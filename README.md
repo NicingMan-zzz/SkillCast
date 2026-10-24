@@ -70,14 +70,14 @@ These map to the six must-have features in the Domain 1 brief.
 - **Human-centred:** recommendations are suggestions. The user makes the final decision.
 ### Tech Stack
  
-| Layer         | Technology                                                           |
-| ------------- | -------------------------------------------------------------------- |
-| Frontend      | [e.g. HTML + JavaScript / React]                                     |
-| Backend       | [e.g. Python, FastAPI or Flask]                                      |
-| Database      | [e.g. SQLite]                                                        |
-| Data sources  | [Occupation/skills taxonomy, e.g. ESCO or O*NET] + [trend feed(s)]   |
-| AI / Compute  | RunPod (GPU), e.g. embeddings for skill similarity or LLM explanations |
-| Hosting / Dev | Replit                                                               |
+| Layer         | Technology                                                              |
+| ------------- | ----------------------------------------------------------------------- |
+| Frontend      | [e.g. HTML + JavaScript / React]                                        |
+| Backend       | [e.g. Python, FastAPI or Flask]                                         |
+| Database      | SQLite (22 tables), Python sqlite3                                      |
+| Data sources  | Arbeitnow public job API (live, dated trend feed) + synthetic profiles  |
+| AI / Compute  | Groq API, openai/gpt-oss-20b for skill extraction                       |
+| Hosting / Dev | Replit                                                                  |
  
 > Fill in the exact libraries, datasets and licences you end up using, and keep them consistent with `submission/SDC2026_[TeamName]_TechDeclaration.pdf`.
  
