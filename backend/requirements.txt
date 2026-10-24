@@ -1,5 +1,0 @@
-groq
-requests
-pandas
-python-dotenv
-runpod
