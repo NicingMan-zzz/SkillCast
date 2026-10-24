@@ -1,2 +1,4 @@
-# Add your project dependencies here, one per line.
-runpod
+groq
+requests
+pandas
+python-dotenv
