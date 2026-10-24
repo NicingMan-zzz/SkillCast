@@ -18,6 +18,5 @@ with get_conn() as c:
     c.executemany("INSERT OR IGNORE INTO skills(name, category) VALUES(?,?)", skills)
     for a, name in aliases.items():
         r = c.execute("SELECT skill_id FROM skills WHERE name=?", (name,)).fetchone()
-        if r:
-            c.execute("INSERT OR IGNORE INTO skill_aliases VALUES(?,?)", (a, r[0]))
+        if r: c.execute("INSERT OR IGNORE INTO skill_aliases VALUES(?,?)", (a, r[0]))
     print("Skills in DB:", c.execute("SELECT COUNT(*) FROM skills").fetchone()[0])

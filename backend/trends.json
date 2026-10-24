@@ -1,12 +1,16 @@
 {
   "snapshot_date": "2026-10-24",
-  "generated_at": "2026-10-24T08:45:53+00:00",
+  "generated_at": "2026-10-24T18:18:00+00:00",
   "source": {
     "name": "Arbeitnow Job Board API",
     "url": "https://www.arbeitnow.com/api/job-board-api",
-    "fetched_at": "2026-10-24 08:23:38"
+    "fetched_at": "2026-10-24 17:55:58"
   },
-  "ai_model_used": "openai/gpt-oss-20b",
+  "ai_model_used": "runpod:openai/gpt-oss-120b",
+  "ai_models_used": [
+    "runpod:openai/gpt-oss-120b",
+    "openai/gpt-oss-20b"
+  ],
   "disclaimer": "Trend scores are estimates from public job postings, not facts or guarantees.",
   "scenarios": [
     {
@@ -33,216 +37,114 @@
       "id": 14,
       "name": "Communication",
       "category": "human",
-      "demand_share": 0.295,
-      "growth_rate": 14.773,
-      "direction": "rising",
-      "postings_recent": 13,
+      "demand_share": 0.394,
+      "growth_rate": 0.0,
+      "direction": "insufficient_data",
+      "postings_recent": 41,
       "postings_prior": 0,
-      "sample_size": 44,
+      "sample_size": 104,
       "low_confidence": true,
       "scenarios": {
-        "Slow adoption": 14.773,
-        "Moderate adoption": 14.773,
-        "Fast disruption": 14.773
+        "Slow adoption": 0.0,
+        "Moderate adoption": 0.0,
+        "Fast disruption": 0.0
       }
     },
     {
       "id": 13,
       "name": "Project Management",
       "category": "human",
-      "demand_share": 0.205,
-      "growth_rate": 10.227,
-      "direction": "rising",
-      "postings_recent": 9,
+      "demand_share": 0.26,
+      "growth_rate": 0.0,
+      "direction": "insufficient_data",
+      "postings_recent": 27,
       "postings_prior": 0,
-      "sample_size": 44,
+      "sample_size": 104,
       "low_confidence": true,
       "scenarios": {
-        "Slow adoption": 10.227,
-        "Moderate adoption": 10.227,
-        "Fast disruption": 10.227
+        "Slow adoption": 0.0,
+        "Moderate adoption": 0.0,
+        "Fast disruption": 0.0
       }
     },
     {
       "id": 7,
       "name": "Data Analysis",
       "category": "technical",
-      "demand_share": 0.182,
-      "growth_rate": 9.091,
-      "direction": "rising",
-      "postings_recent": 8,
+      "demand_share": 0.183,
+      "growth_rate": 0.0,
+      "direction": "insufficient_data",
+      "postings_recent": 19,
       "postings_prior": 0,
-      "sample_size": 44,
+      "sample_size": 104,
       "low_confidence": true,
       "scenarios": {
-        "Slow adoption": 9.091,
-        "Moderate adoption": 9.091,
-        "Fast disruption": 9.091
+        "Slow adoption": 0.0,
+        "Moderate adoption": 0.0,
+        "Fast disruption": 0.0
       }
     },
     {
       "id": 9,
       "name": "Cloud Computing",
       "category": "technical",
-      "demand_share": 0.091,
-      "growth_rate": 4.545,
-      "direction": "rising",
-      "postings_recent": 4,
+      "demand_share": 0.173,
+      "growth_rate": 0.0,
+      "direction": "insufficient_data",
+      "postings_recent": 18,
       "postings_prior": 0,
-      "sample_size": 44,
+      "sample_size": 104,
       "low_confidence": true,
       "scenarios": {
-        "Slow adoption": 4.545,
-        "Moderate adoption": 4.545,
-        "Fast disruption": 4.545
-      }
-    },
-    {
-      "id": 11,
-      "name": "DevOps",
-      "category": "technical",
-      "demand_share": 0.091,
-      "growth_rate": 4.545,
-      "direction": "rising",
-      "postings_recent": 4,
-      "postings_prior": 0,
-      "sample_size": 44,
-      "low_confidence": true,
-      "scenarios": {
-        "Slow adoption": 4.545,
-        "Moderate adoption": 4.545,
-        "Fast disruption": 4.545
+        "Slow adoption": 0.0,
+        "Moderate adoption": 0.0,
+        "Fast disruption": 0.0
       }
     },
     {
       "id": 4,
       "name": "Machine Learning",
       "category": "ai",
-      "demand_share": 0.045,
-      "growth_rate": 2.273,
-      "direction": "rising",
-      "postings_recent": 2,
+      "demand_share": 0.163,
+      "growth_rate": 0.0,
+      "direction": "insufficient_data",
+      "postings_recent": 17,
       "postings_prior": 0,
-      "sample_size": 44,
+      "sample_size": 104,
       "low_confidence": true,
       "scenarios": {
-        "Slow adoption": 1.364,
-        "Moderate adoption": 2.273,
-        "Fast disruption": 3.636
+        "Slow adoption": 0.0,
+        "Moderate adoption": 0.0,
+        "Fast disruption": 0.0
       }
     },
     {
-      "id": 1,
-      "name": "Python",
+      "id": 11,
+      "name": "DevOps",
       "category": "technical",
-      "demand_share": 0.045,
-      "growth_rate": 2.273,
-      "direction": "rising",
-      "postings_recent": 2,
+      "demand_share": 0.115,
+      "growth_rate": 0.0,
+      "direction": "insufficient_data",
+      "postings_recent": 12,
       "postings_prior": 0,
-      "sample_size": 44,
+      "sample_size": 104,
       "low_confidence": true,
       "scenarios": {
-        "Slow adoption": 2.273,
-        "Moderate adoption": 2.273,
-        "Fast disruption": 2.273
+        "Slow adoption": 0.0,
+        "Moderate adoption": 0.0,
+        "Fast disruption": 0.0
       }
     },
     {
       "id": 10,
       "name": "Cybersecurity",
       "category": "technical",
-      "demand_share": 0.023,
-      "growth_rate": 1.136,
-      "direction": "rising",
-      "postings_recent": 1,
-      "postings_prior": 0,
-      "sample_size": 44,
-      "low_confidence": true,
-      "scenarios": {
-        "Slow adoption": 1.136,
-        "Moderate adoption": 1.136,
-        "Fast disruption": 1.136
-      }
-    },
-    {
-      "id": 3,
-      "name": "JavaScript",
-      "category": "technical",
-      "demand_share": 0.023,
-      "growth_rate": 1.136,
-      "direction": "rising",
-      "postings_recent": 1,
-      "postings_prior": 0,
-      "sample_size": 44,
-      "low_confidence": true,
-      "scenarios": {
-        "Slow adoption": 1.136,
-        "Moderate adoption": 1.136,
-        "Fast disruption": 1.136
-      }
-    },
-    {
-      "id": 15,
-      "name": "Renewable Energy Systems",
-      "category": "green",
-      "demand_share": 0.023,
-      "growth_rate": 1.136,
-      "direction": "rising",
-      "postings_recent": 1,
-      "postings_prior": 0,
-      "sample_size": 44,
-      "low_confidence": true,
-      "scenarios": {
-        "Slow adoption": 1.136,
-        "Moderate adoption": 1.136,
-        "Fast disruption": 1.136
-      }
-    },
-    {
-      "id": 2,
-      "name": "SQL",
-      "category": "technical",
-      "demand_share": 0.023,
-      "growth_rate": 1.136,
-      "direction": "rising",
-      "postings_recent": 1,
-      "postings_prior": 0,
-      "sample_size": 44,
-      "low_confidence": true,
-      "scenarios": {
-        "Slow adoption": 1.136,
-        "Moderate adoption": 1.136,
-        "Fast disruption": 1.136
-      }
-    },
-    {
-      "id": 12,
-      "name": "UX Design",
-      "category": "technical",
-      "demand_share": 0.023,
-      "growth_rate": 1.136,
-      "direction": "rising",
-      "postings_recent": 1,
-      "postings_prior": 0,
-      "sample_size": 44,
-      "low_confidence": true,
-      "scenarios": {
-        "Slow adoption": 1.136,
-        "Moderate adoption": 1.136,
-        "Fast disruption": 1.136
-      }
-    },
-    {
-      "id": 8,
-      "name": "Data Visualization",
-      "category": "technical",
-      "demand_share": 0.0,
+      "demand_share": 0.067,
       "growth_rate": 0.0,
-      "direction": "stable",
-      "postings_recent": 0,
+      "direction": "insufficient_data",
+      "postings_recent": 7,
       "postings_prior": 0,
-      "sample_size": 44,
+      "sample_size": 104,
       "low_confidence": true,
       "scenarios": {
         "Slow adoption": 0.0,
@@ -254,12 +156,46 @@
       "id": 6,
       "name": "Natural Language Processing",
       "category": "ai",
-      "demand_share": 0.0,
+      "demand_share": 0.067,
       "growth_rate": 0.0,
-      "direction": "stable",
-      "postings_recent": 0,
+      "direction": "insufficient_data",
+      "postings_recent": 7,
       "postings_prior": 0,
-      "sample_size": 44,
+      "sample_size": 104,
+      "low_confidence": true,
+      "scenarios": {
+        "Slow adoption": 0.0,
+        "Moderate adoption": 0.0,
+        "Fast disruption": 0.0
+      }
+    },
+    {
+      "id": 1,
+      "name": "Python",
+      "category": "technical",
+      "demand_share": 0.038,
+      "growth_rate": 0.0,
+      "direction": "insufficient_data",
+      "postings_recent": 4,
+      "postings_prior": 0,
+      "sample_size": 104,
+      "low_confidence": true,
+      "scenarios": {
+        "Slow adoption": 0.0,
+        "Moderate adoption": 0.0,
+        "Fast disruption": 0.0
+      }
+    },
+    {
+      "id": 12,
+      "name": "UX Design",
+      "category": "technical",
+      "demand_share": 0.038,
+      "growth_rate": 0.0,
+      "direction": "insufficient_data",
+      "postings_recent": 4,
+      "postings_prior": 0,
+      "sample_size": 104,
       "low_confidence": true,
       "scenarios": {
         "Slow adoption": 0.0,
@@ -271,12 +207,80 @@
       "id": 5,
       "name": "Prompt Engineering",
       "category": "ai",
-      "demand_share": 0.0,
+      "demand_share": 0.029,
       "growth_rate": 0.0,
-      "direction": "stable",
-      "postings_recent": 0,
+      "direction": "insufficient_data",
+      "postings_recent": 3,
       "postings_prior": 0,
-      "sample_size": 44,
+      "sample_size": 104,
+      "low_confidence": true,
+      "scenarios": {
+        "Slow adoption": 0.0,
+        "Moderate adoption": 0.0,
+        "Fast disruption": 0.0
+      }
+    },
+    {
+      "id": 8,
+      "name": "Data Visualization",
+      "category": "technical",
+      "demand_share": 0.019,
+      "growth_rate": 0.0,
+      "direction": "insufficient_data",
+      "postings_recent": 2,
+      "postings_prior": 0,
+      "sample_size": 104,
+      "low_confidence": true,
+      "scenarios": {
+        "Slow adoption": 0.0,
+        "Moderate adoption": 0.0,
+        "Fast disruption": 0.0
+      }
+    },
+    {
+      "id": 3,
+      "name": "JavaScript",
+      "category": "technical",
+      "demand_share": 0.019,
+      "growth_rate": 0.0,
+      "direction": "insufficient_data",
+      "postings_recent": 2,
+      "postings_prior": 0,
+      "sample_size": 104,
+      "low_confidence": true,
+      "scenarios": {
+        "Slow adoption": 0.0,
+        "Moderate adoption": 0.0,
+        "Fast disruption": 0.0
+      }
+    },
+    {
+      "id": 2,
+      "name": "SQL",
+      "category": "technical",
+      "demand_share": 0.019,
+      "growth_rate": 0.0,
+      "direction": "insufficient_data",
+      "postings_recent": 2,
+      "postings_prior": 0,
+      "sample_size": 104,
+      "low_confidence": true,
+      "scenarios": {
+        "Slow adoption": 0.0,
+        "Moderate adoption": 0.0,
+        "Fast disruption": 0.0
+      }
+    },
+    {
+      "id": 15,
+      "name": "Renewable Energy Systems",
+      "category": "green",
+      "demand_share": 0.01,
+      "growth_rate": 0.0,
+      "direction": "insufficient_data",
+      "postings_recent": 1,
+      "postings_prior": 0,
+      "sample_size": 104,
       "low_confidence": true,
       "scenarios": {
         "Slow adoption": 0.0,

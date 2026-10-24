@@ -7,8 +7,6 @@ from datetime import datetime, timezone
 from db import get_conn
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join("..", "data", "trends.json")
-MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
-
 
 def build():
     with get_conn() as c:
@@ -18,6 +16,7 @@ def build():
         scen = [dict(r) for r in c.execute("SELECT name, description, demand_multiplier, automation_multiplier FROM scenarios")]
         src = c.execute("""SELECT s.name, s.url, s.fetched_at FROM sources s
                            WHERE s.kind='job_postings' ORDER BY s.fetched_at DESC LIMIT 1""").fetchone()
+        models = [r[0] for r in c.execute("SELECT model FROM llm_runs GROUP BY model ORDER BY MAX(run_id) DESC")]
         rows = c.execute("""SELECT k.skill_id, k.name, k.category, t.demand_share, t.growth_rate,
                                    t.postings_recent, t.postings_prior, t.sample_size
                             FROM trend_signals t JOIN skills k USING(skill_id)
@@ -25,6 +24,7 @@ def build():
     skills = []
     for r in rows:
         g = r["growth_rate"]
+        # Simple illustrative scenario model: AI-category skills grow faster under fast disruption.
         by_scen = {s["name"]: round(g * (s["demand_multiplier"] if r["category"] == "ai" else 1.0), 3) for s in scen}
         skills.append({
             "id": r["skill_id"], "name": r["name"], "category": r["category"],
@@ -40,12 +40,12 @@ def build():
         "snapshot_date": snap,
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "source": dict(src) if src else None,
-        "ai_model_used": MODEL,
+        "ai_model_used": models[0] if models else None,   # latest model that actually ran
+        "ai_models_used": models,                          # every model logged in llm_runs (true disclosure)
         "disclaimer": "Trend scores are estimates from public job postings, not facts or guarantees.",
         "scenarios": scen,
         "skills": skills,
     }
-
 
 if __name__ == "__main__":
     data = build()

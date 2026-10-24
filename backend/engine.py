@@ -1,6 +1,6 @@
 """SkillCast engine: role outlook (per scenario), explainable matching, reskilling pathway.
 
-Drop into backend/ next to db.py. Uses only tables already in schema.sql.
+Drop into ai_db/ next to db.py. Uses only tables already in schema.sql.
 Untested against your data: run `python engine.py demo` after seeding roles/role_skills/courses.
 
 Wire into api.py:
@@ -8,6 +8,7 @@ Wire into api.py:
     register(app)
 """
 import json, math, sys
+from datetime import date
 from flask import request, jsonify
 from db import get_conn
 
@@ -46,7 +47,7 @@ def compute_role_outlook():
                 penalty = (r["automation_exposure"] or 0) * s["automation_multiplier"] * 0.5
                 score = demand - penalty
                 avg_n = sum((sig.get(x["skill_id"]) or {"sample_size": 0})["sample_size"] for x in rs) / max(len(rs), 1)
-                band = 0.5 / math.sqrt(avg_n) if avg_n > 0 else 0.5
+                band = 0.5 / math.sqrt(avg_n) if avg_n > 0 else 0.5  # wider band for thin data
                 c.execute("""INSERT OR REPLACE INTO role_outlook
                              (role_id, scenario_id, snapshot_date, outlook_score, ci_low, ci_high)
                              VALUES (?,?,?,?,?,?)""",
@@ -70,7 +71,7 @@ def match(user_id, role_id, scenario_id):
         breakdown = []
         for r in rows:
             trend = max(_adj_growth(sig.get(r["skill_id"]), scen), 0)
-            w = r["importance"] * (1 + min(trend, 1.0))
+            w = r["importance"] * (1 + min(trend, 1.0))  # cap so one hot skill can't dominate
             lvl = have.get(r["skill_id"], 0)
             cover = min(lvl / r["required_level"], 1.0)
             got += w * cover
