@@ -19,14 +19,14 @@
  
 ## Links
  
-| Resource          | Link                                                 |
-| ----------------- | ---------------------------------------------------- |
-| GitHub Repository | https://github.com/NicingMan-zzz/skillcast           |
-| Replit Project    | https://replit.com/NicingMan-zzz/skillcast           |
-| Live Demo         | https://Skillcast.replit.app                         |
-| RunPod Endpoint   | https://api.runpod.ai/v2/[your-endpoint-id]          |
-| Slide Deck        | https://shorturl.at/3v2DH)                           |
-| Demo Video        | [[ADD LINK]    ](https://youtu.be/WEM3DyVWB10)       |
+| Resource          | Link                                                                |
+| ----------------- | ------------------------------------------------------------------- |
+| GitHub Repository | https://github.com/NicingMan-zzz/skillcast                          |
+| Replit Project    | https://replit.com/NicingMan-zzz/skillcast                          |
+| Live Demo         | https://Skillcast.replit.app                                        |
+| RunPod Endpoint   | https://api.runpod.ai/v2/[your-endpoint-id]                         |
+| Slide Deck        | https://shorturl.at/3v2DH)                                          |
+| Demo Video        | (https://youtu.be/WEM3DyVWB10) ](https://youtu.be/lkYQeZIO-Kw)      |
  
 ---
  
